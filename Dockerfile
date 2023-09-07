@@ -3,6 +3,6 @@ WORKDIR /app
 COPY package*.json ./
 RUN yarn install
 COPY . .  
-RUN node app.js
+RUN pm2 start app.js
 EXPOSE 5000
-CMD ["node", "app.js"]   
+CMD ["pm2", "start", "app.js"]   
