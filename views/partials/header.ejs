@@ -1,15 +1,25 @@
 <Header class="header">
-    <a href="/" class="header__logo">Blog Hoang</a>
+    <a href="/" class="header__logo">My Blog</a>
     <nav class="header__nav">
         <ul>
             <li>
-                <a href="/" class="">Home</a>
+                <a href="/" class="<%= isActiveRoute('/', currentRoute) %>"
+                    >Home</a
+                >
             </li>
             <li>
-                <a href="/" class="">About</a>
+                <a
+                    href="/about"
+                    class="<%= isActiveRoute('/about', currentRoute) %>"
+                    >About</a
+                >
             </li>
             <li>
-                <a href="/" class="">Contact</a>
+                <a
+                    href="/contact"
+                    class="<%= isActiveRoute('/contact', currentRoute) %>"
+                    >Contact</a
+                >
             </li>
         </ul>
     </nav>
@@ -38,6 +48,10 @@
                     stroke-linejoin="round"
                 />
             </svg>
+        </button>
+        <!-- <button class="searchBtn" aria-expanded="false">Login</button> -->
+        <button class="btn">
+            <a href="/admin">Login</a>
         </button>
     </div>
 </Header>

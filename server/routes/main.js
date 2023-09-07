@@ -27,6 +27,7 @@ router.get('', async (req, res) => {
             data,
             current: page,
             nextPage: hasNextPage ? nextPage : null,
+            currentRoute: '/',
         });
     } catch (error) {
         console.log(error);
@@ -45,7 +46,11 @@ router.get('/post/:id', async (req, res) => {
             title: data.title,
             description: data.title,
         };
-        res.render('post', { locals, data });
+        res.render('post', {
+            locals,
+            data,
+            currentRoute: '/post/:id',
+        });
     } catch (error) {
         console.log(error);
     }
@@ -79,30 +84,15 @@ router.post('/search', async (req, res) => {
     }
 });
 
-// function insertPostData() {
-//     Post.insertMany([
-//         {
-//             title: 'Call back in Nodejs',
-//             body: 'Introduction about call back in Nodejs and Callback in Nodejs different in JS',
-//         },
-//         {
-//             title: 'Event Loop',
-//             body: 'Introduction about call back in Nodejs and Callback in Nodejs different in JS',
-//         },
-//         {
-//             title: 'Promise',
-//             body: 'Introduction about call back in Nodejs and Callback in Nodejs different in JS',
-//         },
-//         {
-//             title: 'Async Await',
-//             body: 'Introduction about call back in Nodejs and Callback in Nodejs different in JS',
-//         },
-//     ]);
-// }
-
-// insertPostData();
-
 router.get('/about', (req, res) => {
-    res.render('about');
+    res.render('about', {
+        currentRoute: '/about',
+    });
+});
+
+router.get('/contact', (req, res) => {
+    res.render('Contact', {
+        currentRoute: '/contact',
+    });
 });
 module.exports = router;

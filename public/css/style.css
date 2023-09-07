@@ -50,10 +50,9 @@ textarea {
     cursor: pointer;
 }
 .btn-delete{
-    padding:  10px 16px;
-    background-color: var(--red);
+    background-color: red;
+    cursor: pointer;
 }
-
 img {
     width: 100%;
     height: auto;
@@ -124,6 +123,20 @@ img {
     align-items: center;
     border: 0;
     padding: 6px 12px;
+    background: none;
+    border-radius: var(--border-radius);
+    border: 2px solid transparent;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--black);
+}
+
+.header__button__login button {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    border: 0;
+    padding: 6px 15px;
     background: none;
     border-radius: var(--border-radius);
     border: 2px solid transparent;
@@ -317,3 +330,36 @@ img {
     justify-content: space-between;
     padding: 10px 0;
 }
+
+/* Text TypeWrite Animation */
+/* DEMO-SPECIFIC STYLES */
+.typewriter  {
+    text-align: center;
+    color: #111817;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(30, end),
+      blink-caret .5s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
+  }
+
+  /* about me img */
+  .about__me img{
+    width: 15px;
+    height: 15px;
+  }
