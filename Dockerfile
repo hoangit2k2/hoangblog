@@ -3,6 +3,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN yarn install
 COPY . .  
-RUN pm2 start app.js
 EXPOSE 5000
-CMD ["pm2", "start", "app.js"]   
+CMD ["node", "app.js"]   
+RUN docker build -t blog .
+RUN docker run -p 3000:3000 -d blog

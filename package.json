@@ -6,8 +6,8 @@
   "scripts": {
     "beautiful": "prettier --write --single-quote --trailing-comma all 'app.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "app.js",
-    "build": "ng build --prod",
+    "start": "node app.js",
+    "build": "echo VERSION=$npm_package_version",
     "dev": "nodemon app.js",
     "lint:fix": "eslint --fix ./*.js"
   },
