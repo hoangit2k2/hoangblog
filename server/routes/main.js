@@ -49,7 +49,7 @@ router.get('/post/:id', async (req, res) => {
         res.render('post', {
             locals,
             data,
-            currentRoute: '/post/:id',
+            currentRoute: `/`,
         });
     } catch (error) {
         console.log(error);
@@ -78,6 +78,7 @@ router.post('/search', async (req, res) => {
         res.render('search', {
             data,
             locals,
+            currentRoute: `/`,
         });
     } catch (error) {
         console.log(error);

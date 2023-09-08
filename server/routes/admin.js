@@ -148,11 +148,11 @@ router.get('/edit-post/:id', async (req, res) => {
 router.put('/edit-post/:id', authMiddleware, async (req, res) => {
     try {
         try {
-            await Post.findByIdAndUpdate(req.params.id, {
+            const data = await Post.findByIdAndUpdate(req.params.id, {
                 title: req.body.title,
                 body: req.body.body,
             });
-            res.redirect(`/edit-post/${req.params.id}`);
+            res.redirect(`/post/${req.params.id}`);
         } catch (error) {
             console.log(error);
             res.status(500).json({ message: 'Internal server' });

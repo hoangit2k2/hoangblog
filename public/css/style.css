@@ -11,7 +11,7 @@
     --border-radius: 10px; 
 }
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     color: var(--black);
     font-size: var(--font-size-base);
     background-color: #FAF5EE;
@@ -31,7 +31,7 @@ input[type= "password"],
 input[type= "search"],
 select,
 textarea {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: var(--font-size-base);
     display: block;
     box-sizing: border-box;
